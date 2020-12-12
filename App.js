@@ -3,9 +3,11 @@ import React from "react";
 import { StyleSheet, Text, View } from "react-native";
 // Animations
 import TextAnimations from "./animations/TextAnimations";
+import WheelOfFortune from "./animations/WheelOfFortune";
+import SliderAnimation from "./animations/SliderAnimation";
 
 export default function App() {
-  return <TextAnimations />;
+  return <SliderAnimation />;
 }
 
 const styles = StyleSheet.create({
