@@ -7,7 +7,7 @@ import WheelOfFortune from "./animations/WheelOfFortune";
 import SliderAnimation from "./animations/SliderAnimation";
 
 export default function App() {
-  return <SliderAnimation />;
+  return <WheelOfFortune />;
 }
 
 const styles = StyleSheet.create({
