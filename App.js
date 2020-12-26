@@ -5,9 +5,11 @@ import { StyleSheet, Text, View } from "react-native";
 import TextAnimations from "./animations/TextAnimations";
 import WheelOfFortune from "./animations/WheelOfFortune";
 import SliderAnimation from "./animations/SliderAnimation";
+import CallerAnimation from "./animations/Carosel/AdvanceCarosel";
+import List from "./animations/StickyFooter.js/Index";
 
 export default function App() {
-  return <WheelOfFortune />;
+  return <List />;
 }
 
 const styles = StyleSheet.create({
