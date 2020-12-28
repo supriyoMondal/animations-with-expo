@@ -7,9 +7,10 @@ import WheelOfFortune from "./animations/WheelOfFortune";
 import SliderAnimation from "./animations/SliderAnimation";
 import List from "./animations/StickyFooter.js/Index";
 import AdvanceCarousel from "./animations/Carosel/AdvanceCarosel";
+import Timer from "./animations/Timer/Timer";
 
 export default function App() {
-  return <AdvanceCarousel />;
+  return <Timer />;
 }
 
 const styles = StyleSheet.create({
