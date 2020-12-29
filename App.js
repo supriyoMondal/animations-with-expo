@@ -9,9 +9,10 @@ import List from "./animations/StickyFooter.js/Index";
 import AdvanceCarousel from "./animations/Carosel/AdvanceCarosel";
 import Timer from "./animations/Timer/Timer";
 import ParallaxCarosel from "./animations/Carosel/ParallaxCarosel";
+import FlatListCarousel from "./animations/Carosel/FlatListCarosel";
 
 export default function App() {
-  return <ParallaxCarosel />;
+  return <FlatListCarousel />;
 }
 
 const styles = StyleSheet.create({
