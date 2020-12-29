@@ -8,9 +8,10 @@ import SliderAnimation from "./animations/SliderAnimation";
 import List from "./animations/StickyFooter.js/Index";
 import AdvanceCarousel from "./animations/Carosel/AdvanceCarosel";
 import Timer from "./animations/Timer/Timer";
+import ParallaxCarosel from "./animations/Carosel/ParallaxCarosel";
 
 export default function App() {
-  return <Timer />;
+  return <ParallaxCarosel />;
 }
 
 const styles = StyleSheet.create({
