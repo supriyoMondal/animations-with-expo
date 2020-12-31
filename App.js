@@ -10,9 +10,10 @@ import AdvanceCarousel from "./animations/Carosel/AdvanceCarosel";
 import Timer from "./animations/Timer/Timer";
 import ParallaxCarosel from "./animations/Carosel/ParallaxCarosel";
 import ScrollableTabs from "./animations/Tabs/ScrollableTabs";
+import StackCards from "./animations/CardSwipe/StackCards";
 
 export default function App() {
-  return <ScrollableTabs />;
+  return <StackCards />;
 }
 
 const styles = StyleSheet.create({
