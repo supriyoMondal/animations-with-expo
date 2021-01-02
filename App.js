@@ -12,9 +12,10 @@ import ParallaxCarosel from "./animations/Carosel/ParallaxCarosel";
 import ScrollableTabs from "./animations/Tabs/ScrollableTabs";
 import StackCards from "./animations/CardSwipe/StackCards";
 import Donut from "./animations/SvgCircles/Donut";
+import Carousel from "./animations/Carosel/Carousel";
 
 export default function App() {
-  return <Donut />;
+  return <Carousel />;
 }
 
 const styles = StyleSheet.create({
