@@ -11,9 +11,10 @@ import Timer from "./animations/Timer/Timer";
 import ParallaxCarosel from "./animations/Carosel/ParallaxCarosel";
 import ScrollableTabs from "./animations/Tabs/ScrollableTabs";
 import StackCards from "./animations/CardSwipe/StackCards";
+import Donut from "./animations/SvgCircles/Donut";
 
 export default function App() {
-  return <StackCards />;
+  return <Donut />;
 }
 
 const styles = StyleSheet.create({
