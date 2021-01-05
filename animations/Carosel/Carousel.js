@@ -139,9 +139,79 @@ const Item = ({ imageUri, heading, description, index, scrollX }) => {
   );
 };
 
-const Pagination = () => {
+const Ticker = ({ scrollX }) => {
+  const inputRange = [-width, 0, width];
+  const translateY = scrollX.interpolate({
+    inputRange,
+    outputRange: [TICKER_HEIGHT, 0, -TICKER_HEIGHT],
+  });
+
+  return (
+    <View style={styles.tickerContainer}>
+      <Animated.View
+        style={{ height: TICKER_HEIGHT, transform: [{ translateY }] }}
+      >
+        {data.map(({ type }, index) => {
+          return (
+            <Text style={styles.tickerText} key={`${type}-${index}`}>
+              {type}
+            </Text>
+          );
+        })}
+      </Animated.View>
+    </View>
+  );
+};
+
+const Circle = ({ scrollX }) => {
+  return (
+    <View style={[StyleSheet.absoluteFillObject, styles.circleContainer]}>
+      {data.map(({ color }, index) => {
+        const inputRange = [
+          (index - 0.55) * width,
+          index * width,
+          (index + 0.56) * width,
+        ];
+        const scale = scrollX.interpolate({
+          inputRange,
+          outputRange: [0, 1, 0],
+          extrapolate: "clamp",
+        });
+        const opacity = scrollX.interpolate({
+          inputRange,
+          outputRange: [0, 0.4, 0],
+        });
+        return (
+          <Animated.View
+            key={index}
+            style={[
+              styles.circle,
+              { backgroundColor: color, transform: [{ scale }], opacity },
+            ]}
+          />
+        );
+      })}
+    </View>
+  );
+};
+
+const Pagination = ({ scrollX }) => {
+  const inputRange = [-width, 0, width];
+  const translateX = scrollX.interpolate({
+    inputRange,
+    outputRange: [-DOT_SIZE, 0, DOT_SIZE],
+  });
   return (
     <View style={[styles.pagination]}>
+      <Animated.View
+        style={[
+          styles.paginationIndicator,
+          {
+            position: "absolute",
+            transform: [{ translateX }],
+          },
+        ]}
+      />
       {data.map((item) => {
         return (
           <View key={item.key} style={styles.paginationDotContainer}>
@@ -161,7 +231,7 @@ const Carousel = () => {
   return (
     <View style={styles.container}>
       <StatusBar hidden />
-
+      <Circle scrollX={scrollX} />
       <Animated.FlatList
         keyExtractor={(item) => item.key}
         data={data}
@@ -178,7 +248,8 @@ const Carousel = () => {
         scrollEventThrottle={16}
       />
       <Image style={styles.logo} source={{ uri: logo }} />
-      <Pagination />
+      <Pagination scrollX={scrollX} />
+      <Ticker scrollX={scrollX} />
     </View>
   );
 };
@@ -262,5 +333,30 @@ const styles = StyleSheet.create({
     bottom: 40,
     flexDirection: "row",
     height: DOT_SIZE,
+  },
+  tickerContainer: {
+    position: "absolute",
+    top: 16,
+    left: 20,
+    overflow: "hidden",
+    height: TICKER_HEIGHT,
+  },
+  tickerText: {
+    fontSize: TICKER_HEIGHT,
+    height: TICKER_HEIGHT,
+    textTransform: "uppercase",
+    fontWeight: "800",
+  },
+
+  circleContainer: {
+    alignItems: "center",
+    justifyContent: "center",
+  },
+  circle: {
+    width: CIRCLE_SIZE,
+    height: CIRCLE_SIZE,
+    borderRadius: CIRCLE_SIZE / 2,
+    position: "absolute",
+    top: "15%",
   },
 });
