@@ -13,9 +13,10 @@ import ScrollableTabs from "./animations/Tabs/ScrollableTabs";
 import StackCards from "./animations/CardSwipe/StackCards";
 import Donut from "./animations/SvgCircles/Donut";
 import Carousel from "./animations/Carosel/Carousel";
+import Carousel3D from "./animations/Carosel/3DCarousel";
 
 export default function App() {
-  return <Carousel />;
+  return <Carousel3D />;
 }
 
 const styles = StyleSheet.create({

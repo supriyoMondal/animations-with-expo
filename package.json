@@ -15,6 +15,7 @@
     "expo": "~39.0.2",
     "expo-constants": "~9.2.0",
     "expo-status-bar": "~1.0.2",
+    "faker": "^5.1.0",
     "popmotion": "^9.0.1",
     "prop-types": "^15.7.2",
     "randomcolor": "^0.6.2",
