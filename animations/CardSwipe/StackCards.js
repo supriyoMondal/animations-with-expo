@@ -257,7 +257,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   title: {
-    fontSize: 28,
+    fontSize: 20,
     fontWeight: "900",
     textTransform: "uppercase",
     letterSpacing: -1,

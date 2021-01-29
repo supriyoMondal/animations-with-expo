@@ -14,9 +14,11 @@ import StackCards from "./animations/CardSwipe/StackCards";
 import Donut from "./animations/SvgCircles/Donut";
 import Carousel from "./animations/Carosel/Carousel";
 import Carousel3D from "./animations/Carosel/3DCarousel";
+import FlatListCarousel from "./animations/Carosel/FlatListCarosel";
+import GallerySlider from "./animations/Carosel/GallerySlider";
 
 export default function App() {
-  return <Carousel3D />;
+  return <GallerySlider />;
 }
 
 const styles = StyleSheet.create({
